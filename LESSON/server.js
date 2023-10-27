@@ -1,0 +1,19 @@
+// We will be refactoring an existing Express project to use the Prisma client
+// We will also translate CRUD SQL queries into the corresponding PRISMA client operations
+
+// Same start up as usual - except you install Prisma (npm i @prisma/client)
+// Also - npx prisma init --datasource-provider postgresql
+
+
+
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+const port = 8080;
+
+
+
+
+app.listen(port, () => {
+    console.log('Server is running on port 8080')
+});
