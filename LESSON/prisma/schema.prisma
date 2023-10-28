@@ -1,0 +1,18 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// This is the syntax for creating tables with Prisma (we use "model")
+// Making an author table
+// autoincrement just increments the id +1 everytime we add a new author
+model author {
+  id Int @id @default(autoincrement())
+}
