@@ -12,7 +12,23 @@ datasource db {
 
 // This is the syntax for creating tables with Prisma (we use "model")
 // Making an author table
-// autoincrement just increments the id +1 everytime we add a new author
+
 model author {
   id Int @id @default(autoincrement())
+  name String?
+  email String @unique
+  posts post[]
+}
+
+// autoincrement just increments the id +1 everytime we add a new author
+// the ? after "String" on L18 means that this field can be ommited
+
+
+model post {
+  id Int @id @default(autoincrement())
+  title String
+  content String?
+  published Boolean @default(false)
+  authorId Int 
+  author author @relation(fields: [authorId], references: [id])
 }
