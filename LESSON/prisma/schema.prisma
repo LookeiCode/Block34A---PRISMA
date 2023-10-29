@@ -22,6 +22,7 @@ model author {
 
 // autoincrement just increments the id +1 everytime we add a new author
 // the ? after "String" on L18 means that this field can be ommited
+// the @unique for email is a CONSTRAINT and means that only one of that email can exist in the database - if you try to create two authors with the same email it'll give an error and won't let you
 // the "posts" column on L20 represents an array of posts (which is basically an array of "post" tables) from the post table below - so like each new post is an entire table, and they're all in this "posts" array
 
 // Each line represents/creates a new column in the table

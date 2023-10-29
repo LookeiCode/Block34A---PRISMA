@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
     }
 })
 
-// L10-13 basically joins the author table into the posts table when you make a get request
+// L10-14 basically joins the author table into the posts table when you make a get request
 // Returns all the posts that exist + if you include (L11) "author: true" it'll bring information about the author of that post in the request
 // If you got rid of L11-L13 it would just be a normal GET request
 
@@ -94,10 +94,10 @@ router.post('/new', async (req, res) => {
 // You'll notice that we're using a bunch of objects. Not important, but just so you know what you're working with
 // Each column is also considered a "field" - like there's fields to input information/values
 
-// L8 connects whatever you write in the body in Postman to the columns specified
-// L9 creates a new post table (with the data from L8)
-// L13-14 basically allows you to specify which author is related to the new post you make
-// L14 We also want to make sure we do a PARSEINT on the authorId so it returns as an integer, otherwise PostgreSQL will return it as a string (it "stringifys" things by default)
+// L77 connects whatever you write in the body in Postman to the columns specified
+// L78 creates a new post table (with the data from L8)
+// L82-83 basically allows you to specify which author is related to the new post you make
+// L83 We also want to make sure we do a PARSEINT on the authorId so it returns as an integer, otherwise PostgreSQL will return it as a string (it "stringifys" things by default)
 
 
 
