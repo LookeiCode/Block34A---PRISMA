@@ -7,12 +7,13 @@
 // Then go into the .env folder and configure the URL
 
 
-
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const port = 8080;
+
+app.use(bodyParser.json());
+app.use('/api/posts', require('./routes/posts'));
 
 app.listen(port, () => {
     console.log('Server is running on port 8080')
