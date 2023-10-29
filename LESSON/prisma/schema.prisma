@@ -22,6 +22,9 @@ model author {
 
 // autoincrement just increments the id +1 everytime we add a new author
 // the ? after "String" on L18 means that this field can be ommited
+// the "posts" column on L20 represents an array of posts (which is basically an array of "post" tables) from the post table below - so like each new post is an entire table, and they're all in this "posts" array
+
+// Each line represents/creates a new column in the table
 
 
 model post {
@@ -32,3 +35,11 @@ model post {
   authorId Int 
   author author @relation(fields: [authorId], references: [id])
 }
+// (26:00 TS) L33
+// The first "author" belongs to the post model (table) and the second "author" references the author table
+// I assume the @relation is some kind of method that links the "authorId" up to the "id" PK in the author table - basically is saying "we're making a FK here"
+// * Also, this (L33) does not represent or create a new column, it acts as a FK (foriegn key) - that then links to the PK of author (id)
+
+
+// ************ MIGRATION ************
+// Now we will migrate (basically push) our tables and columns from Prisma to our DB
